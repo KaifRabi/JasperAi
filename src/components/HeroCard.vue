@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="flex flex-col gap-4 bg-white text-black text-center w-full md:w-[400px] px-8 py-6 rounded-xl">
-            <p class="text-lg font-bold"><slot name="title"></slot></p>
-            <p><slot name="subtitle"></slot></p>
+            <slot name="title"><p class="text-lg font-bold"></p></slot>
+            <slot name="subtitle"><p></p></slot>
             <hr>
-            <div><slot name="info"></slot></div>
+            <slot name="info"><div></div></slot>
 
             <!-- Pricing -->
             <div class="flex justify-center gap-1 text-xl font-medium">
@@ -29,6 +29,13 @@
             <div class="font-bold">{{words[inputValue]}}<span class="font-normal"> words/mo</span></div>
             <!-- Button -->
             <a href="" class="text-purple-500 border border-1 border-purple-500 py-4 my-6">Start For Free</a>
+            <p class="text-gray-400 -mt-8">5 day free trial with 10k credits</p>
+            
+            <!-- Lists -->
+            <slot name="list"></slot>
+            <ul class="text-left">
+                <li v-for="(items, index) in list" :key="index" class="py-1">{{items}}</li>
+            </ul>
             </div>
 
     </div>
@@ -41,10 +48,13 @@
                 type: Object,
             },
             words: {
-                type: Object,
+                type: Array,
             },
             isToggle: {
-                type: Object,
+                type: Boolean,
+            },
+            list: {
+                type: Array,
             },
         },
         data() {
