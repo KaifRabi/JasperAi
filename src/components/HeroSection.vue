@@ -36,24 +36,28 @@
                     :prices="prices.Starter"
                     :words="words.Monthly"
                     :is-toggle="isToggle"
+                    :list="list.starter"
                 >
                     <template #title>Starter</template>
                     <template #subtitle>For the hobbyist just getting started</template>
                     <template #info>Access 50+ AI copy generators to write short-form content like ads, product descriptions, and improve existing copy.</template>       
                     <template #starting-price>20k</template>       
-                    <template #ending-price>320k</template>     
+                    <template #ending-price>320k</template>
+                    <template #list><div class="text-left font-bold">Quick Overview:</div></template>    
                 </HeroCard>
                 <!-- Card number 2 -->
                 <HeroCard 
                     :prices="prices.Boss"
                     :words="words.Yearly"
                     :is-toggle="isToggle"
+                    :list="list.boss"
                 >
                     <template #title>Boss Mode</template>
                     <template #subtitle>For bloggers & content marketer</template>
                     <template #info>Access 50+ AI copy generators to write short-form content like ads, product descriptions, and improve existing copy.</template>       
                     <template #starting-price>50k</template>       
-                    <template #ending-price>700k</template>     
+                    <template #ending-price>700k</template>  
+                    <template #list><div class="text-left font-bold">Everything in starter plus</div></template>    
                 </HeroCard>
             </container>
 
@@ -87,6 +91,10 @@ import ToggleSwitch from './ToggleSwitch.vue'
                             Monthly: ['20,000','35,000', '65,000', '75,000', '115,000', '150,000', '240,000', '320,000', '320,000+' ],            
                             Yearly: ['30,000','45,000', '75,000', '90,000', '140,000', '165,000', '190,000', '400,000', '500,000+' ],           
                     },
+                    list: {
+                            starter: ['50+ AI templates', 'Support for 20+ languages' , 'Up to 5 users', 'Chat support', 'Compose & Commands features', 'Google Docs style editor'],
+                            boss: ['Google Docs style editor','Compose & command features','Maximum content lookback', 'Increased limits on templates', 'Grows with your team', 'Priority chat support' ]
+                    }
             }
         },
     }
